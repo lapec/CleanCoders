@@ -1,0 +1,130 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "FitSharp/2024.11.28.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/fit.dll": {},
+          "lib/net8.0/fitSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/fit.dll": {},
+          "lib/net8.0/fitSharp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FitSharp/2024.11.28.1": {
+      "sha512": "Yyf1IXf1pmUzB3bHDfP9pPPgtIo9qn0nPEIzPe8jOAmY3fCpeScnEPGNT4aWZt2DR4iLnJu0hsrF9ui/OeIJPg==",
+      "type": "package",
+      "path": "fitsharp/2024.11.28.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fitsharp.2024.11.28.1.nupkg.sha512",
+        "fitsharp.nuspec",
+        "lib/.DS_Store",
+        "lib/net48/Runner.exe",
+        "lib/net48/RunnerW.exe",
+        "lib/net48/fit.dll",
+        "lib/net48/fitSharp.dll",
+        "lib/net8.0-windows/Runner.dll",
+        "lib/net8.0-windows/Runner.runtimeconfig.json",
+        "lib/net8.0-windows/RunnerW.dll",
+        "lib/net8.0-windows/RunnerW.runtimeconfig.json",
+        "lib/net8.0-windows/fit.dll",
+        "lib/net8.0-windows/fitSharp.dll",
+        "lib/net8.0/Runner.dll",
+        "lib/net8.0/Runner.runtimeconfig.json",
+        "lib/net8.0/fit.dll",
+        "lib/net8.0/fitSharp.dll",
+        "lib/net9.0-windows/Runner.dll",
+        "lib/net9.0-windows/Runner.runtimeconfig.json",
+        "lib/net9.0-windows/RunnerW.dll",
+        "lib/net9.0-windows/RunnerW.runtimeconfig.json",
+        "lib/net9.0-windows/fit.dll",
+        "lib/net9.0-windows/fitSharp.dll",
+        "lib/net9.0/Runner.dll",
+        "lib/net9.0/Runner.runtimeconfig.json",
+        "lib/net9.0/fit.dll",
+        "lib/net9.0/fitSharp.dll",
+        "license/license.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "FitSharp >= 2024.11.28.1"
+    ]
+  },
+  "packageFolders": {
+    "/Users/bobanlapcevic/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/bobanlapcevic/Desktop/CleanCode/CleanCoders/Tests.FitNesse/Tests.FitNesse.csproj",
+      "projectName": "Tests.FitNesse",
+      "projectPath": "/Users/bobanlapcevic/Desktop/CleanCode/CleanCoders/Tests.FitNesse/Tests.FitNesse.csproj",
+      "packagesPath": "/Users/bobanlapcevic/.nuget/packages/",
+      "outputPath": "/Users/bobanlapcevic/Desktop/CleanCode/CleanCoders/Tests.FitNesse/obj/",
+      "projectStyle": "PackageReference",
+      "UsingMicrosoftNETSdk": false,
+      "configFilePaths": [
+        "/Users/bobanlapcevic/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "FitSharp": {
+            "target": "Package",
+            "version": "[2024.11.28.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

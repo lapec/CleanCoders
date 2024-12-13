@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <OutputPath>/Users/bobanlapcevic/Desktop/CleanCode/CleanCoders/FitNesse</OutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <OutputPath>/Users/bobanlapcevic/Desktop/CleanCode/CleanCoders/FitNesse</OutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="FitSharp" Version="2024.11.28.1" />
+    </ItemGroup>
+</Project>
