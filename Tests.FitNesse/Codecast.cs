@@ -4,14 +4,19 @@ public class Codecast
 {
     public string Title { get; set; }
     public string PublicationDate { get; set; }
-    public void setTitle(string title)
+    public string Permalink { get; set; }
+    public void SetTitle(string title)
     {
         this.Title = title;
     }
 
-    public void setPublicationDate(string publicationDate)
+    public void SetPublicationDate(string publicationDate)
     {
         this.PublicationDate = publicationDate;
+    }
+    
+    public void SetPermalink(string permalink) {
+        this.Permalink = permalink;
     }
 
 }

@@ -4,25 +4,20 @@ public class GivenCodecasts
 {
     private string title;
     private string publicationDate;
-    private static string dateFormat = DateTime.Now.ToString("yyyy-mm-dd");
-    private string permalink;
 
-    public void setTitle(String title) {
+    public void SetTitle(string title) {
         this.title = title;
     }
 
-    public void setPublished(string publicationDate) {
+    public void SetPublished(string publicationDate) {
         this.publicationDate = publicationDate;
     }
 
-    public void setPermalink(string permalink) {this.permalink = permalink;}
-
-    public void execute()
+    public void Execute()
     {
         Codecast codecast = new Codecast();
-        codecast.setTitle(title);
-        codecast.setPublicationDate(publicationDate);
+        codecast.SetTitle(title);
+        codecast.SetPublicationDate(publicationDate);
         Context.gateway.save(codecast);
     }
-    
 }

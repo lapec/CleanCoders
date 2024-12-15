@@ -1,24 +1,25 @@
-﻿namespace Tests.FitNesse;
+﻿using System.Diagnostics;
 
-public class CodecastPresentationFixture
+namespace Tests.FitNesse;
+
+public class CodecastPresentation
 {
-    public bool loginUser(string username) { return false; }
-    public bool createLicenseForViewing(string user, string codecast) { return false; }
-    public string presentationUser(){ return "TILT :D"; }
-    
-    public CodecastPresentationFixture()
+    public CodecastPresentation()
     {
         Context.gateway = new MockGateway();
     }
 
-    public bool clearCodecasts()
+    public bool ClearCodecasts()
     {
         List<Codecast> codecasts = Context.gateway.findAllCodecasts();
-        foreach(var codecast in codecasts) 
+        foreach(var codecast in codecasts)
         {
             Context.gateway.delete(codecast);
         }
         return Context.gateway.findAllCodecasts().Count() == 0;
     }
-    public int countOfCodecastsPresented() { return -1; }
+    public bool LoginUser(string username) { return false; }
+    public bool CreateLicenseForViewing(string user, string codecast) { return false; }
+    public string PresentationUser(){ return "TILT :D"; }
+    public int CountOfCodecastsPresented() { return -1; }
 }

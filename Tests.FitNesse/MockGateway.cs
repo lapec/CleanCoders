@@ -3,9 +3,9 @@ namespace Tests.FitNesse;
 public class MockGateway : Gateway
 {
     public List<Codecast> Codecasts { get; set; }
-    public MockGateway(List<Codecast> codecasts)
+    public MockGateway()
     {
-        Codecasts = codecasts;
+        Codecasts = new List<Codecast>();
     }
 
     public List<Codecast> findAllCodecasts()
@@ -15,7 +15,7 @@ public class MockGateway : Gateway
 
     public void delete(Codecast codecast)
     {
-       
+        Codecasts.Remove(codecast);
     }
 
     public void save(Codecast codecast)
