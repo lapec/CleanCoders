@@ -11,4 +11,9 @@ public class MockGateway : Gateway
     {
        
     }
+
+    public void save(Codecast codecast)
+    {
+        
+    }
 }
