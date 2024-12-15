@@ -6,12 +6,12 @@
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-        <OutputPath>/Users/bobanlapcevic/Desktop/CleanCode/CleanCoders/FitNesse</OutputPath>
+        <OutputPath>/Users/bobanlapcevic/Desktop/CleanCode/FitNesse</OutputPath>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <OutputPath>/Users/bobanlapcevic/Desktop/CleanCode/CleanCoders/FitNesse</OutputPath>
+        <OutputPath>/Users/bobanlapcevic/Desktop/CleanCode/FitNesse</OutputPath>
     </PropertyGroup>
 
     <ItemGroup>
