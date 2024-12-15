@@ -12,7 +12,7 @@ public class CodecastPresentation
     public bool ClearCodecasts()
     {
         List<Codecast> codecasts = Context.gateway.findAllCodecasts();
-        foreach(var codecast in codecasts)
+        foreach(var codecast in new List<Codecast> (codecasts))
         {
             Context.gateway.delete(codecast);
         }
