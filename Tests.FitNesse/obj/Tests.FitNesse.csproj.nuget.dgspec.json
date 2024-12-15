@@ -13,6 +13,7 @@
         "packagesPath": "/Users/bobanlapcevic/.nuget/packages/",
         "outputPath": "/Users/bobanlapcevic/Desktop/CleanCode/CleanCoders/Tests.FitNesse/obj/",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/bobanlapcevic/.nuget/NuGet/NuGet.Config"
         ],

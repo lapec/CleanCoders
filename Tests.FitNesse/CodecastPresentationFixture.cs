@@ -18,7 +18,7 @@ public class CodecastPresentationFixture
         {
             Context.gateway.delete(codecast);
         }
-        return true;
+        return Context.gateway.findAllCodecasts().Count() == 0;
     }
     public int countOfCodecastsPresented() { return -1; }
 }
