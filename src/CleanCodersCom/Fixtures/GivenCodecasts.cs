@@ -1,0 +1,25 @@
+namespace CleancodersCom.Fixtures;
+
+public class GivenCodecasts
+{
+    private string _title;
+    private string _publicationDate;
+
+    public void SetTitle(string title) {
+        this._title = title;
+    }
+
+    public void SetPublished(string publicationDate) {
+        this._publicationDate = publicationDate;
+    }
+
+    public void Execute()
+    {
+        Codecast codecast = new Codecast
+        {
+            Title = _title,
+            PublicationDate = _publicationDate
+        };
+        Context.Gateway.Save(codecast);
+    }
+}
