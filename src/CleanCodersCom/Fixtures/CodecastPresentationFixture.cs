@@ -29,8 +29,15 @@ public class CodecastPresentation
             return false;
         }
     }
-    
-    public bool CreateLicenseForViewing(string user, string codecast) { return false; }
+
+    public bool CreateLicenseForViewing(string username, string codecastTitle)
+    {
+        var user = Context.Gateway.FindUser(username);
+        Codecast codecast = Context.Gateway.FindCodecastByTitle(codecastTitle);
+        License license = new License(user, codecast);
+        Context.Gateway.Save(license);
+        return _useCase.IsLicensedToViewCodecast(user, codecast);
+    }
     
     public string PresentationUser()
     {

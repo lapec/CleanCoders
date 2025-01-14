@@ -3,6 +3,7 @@ public class MockGateway : Gateway
 {
     private List<Codecast> Codecasts { get; set; } = [];
     private List<User> Users { get; set; } = [];
+    private List<License> Licenses { get; set; } = [];
 
     public List<Codecast> FindAllCodecasts()
     {
@@ -21,7 +22,19 @@ public class MockGateway : Gateway
     
     public void Save(User user)
     {
+        EstablishId(user);
         Users.Add(user);
+    }
+
+    private void EstablishId(User user)
+    {
+        if (user.GetId() == null)
+            user.SetId(Guid.NewGuid().ToString());
+    }
+
+    public void Save(License license)
+    {
+        Licenses.Add(license);
     }
 
     public User? FindUser(string username)
@@ -32,5 +45,27 @@ public class MockGateway : Gateway
                 return user;
         }
         return null;
+    }
+
+    public Codecast? FindCodecastByTitle(string codecastTitle)
+    {
+        foreach (var codecast in Codecasts)
+        {
+            return codecast.Title == codecastTitle ? codecast : null;
+        }
+
+        return null;
+    }
+
+    public List<License> FindLicensesForUserAndCodecast(User user, Codecast codecast)
+    {
+        List<License> results = new List<License>();
+        foreach (var license in Licenses)
+        {
+            if (license.GetUser().IsSame(user) && license.GetCodecast().IsSame(codecast))
+                results.Add(license);
+        }
+        
+        return results;
     }
 }

@@ -1,2 +1,26 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AAssert_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F46a322d26154b982566e1817203e5452c91223f93b0e392d9c5b4806696fdc1_003FAssert_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=dcabba1e_002D0a0c_002D4995_002D81a2_002D40b88aa60693/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="userWithoutViewLicense" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.PresentCodecastUseCaseTest.userWithoutViewLicense&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=de55d0bc_002Df39b_002D4a92_002D9f73_002D031a03a0f909/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="userWithoutViewLicense #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.PresentCodecastUseCaseTest.userWithViewLicense_canViewCodecast&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.PresentCodecastUseCaseTest.userWithoutViewLicense_cannotViewCodecast&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.PresentCodecastUseCaseTest.userWithoutViewLicense_cannotViewOtherUsersCodecast&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.UserTest.twoDifferentUsersAreNotTheSame&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.UserTest.TwoDifferentUsersAreNotTheSame&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.UserTest.OneUserIsTheSameAsItself&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.UserTest.usersWithSameIdAreTheSame&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.UserTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.PresentCodecastUseCaseTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f94e5cc1_002D98e6_002D42d1_002Da523_002Dbb21e1d584c3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="userWithoutViewLicense #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.PresentCodecastUseCaseTest.userWithoutViewLicense&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=cleancoderscom/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

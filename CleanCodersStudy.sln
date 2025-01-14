@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCodersCom", "src\CleanCodersCom\CleanCodersCom.csproj", "{741030C5-A405-4CC6-B237-2350FF6ADDB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanCoders.Tests", "CleanCoders.Tests\CleanCoders.Tests.csproj", "{070A4100-67FF-4FC6-8821-80E5ECB51984}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{741030C5-A405-4CC6-B237-2350FF6ADDB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{741030C5-A405-4CC6-B237-2350FF6ADDB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{741030C5-A405-4CC6-B237-2350FF6ADDB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{070A4100-67FF-4FC6-8821-80E5ECB51984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{070A4100-67FF-4FC6-8821-80E5ECB51984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{070A4100-67FF-4FC6-8821-80E5ECB51984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{070A4100-67FF-4FC6-8821-80E5ECB51984}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
