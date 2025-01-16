@@ -3,7 +3,7 @@
 public class CodecastPresentation
 {
     private readonly PresentCodecastUseCase _useCase = new PresentCodecastUseCase();
-    private readonly GateKeeper _gateKeeper = new GateKeeper();
+    public static readonly GateKeeper GateKeeper = new GateKeeper();
 
     public CodecastPresentation()
     {
@@ -21,7 +21,7 @@ public class CodecastPresentation
         var user = Context.Gateway.FindUser(username);
         if (user != null)
         {
-            _gateKeeper.SetLoggedInUser(user);
+            GateKeeper.SetLoggedInUser(user);
             return true;
         }
         else
@@ -41,12 +41,12 @@ public class CodecastPresentation
     
     public string PresentationUser()
     {
-        return _gateKeeper.GetLoggedInUser().GetUserName();
+        return GateKeeper.GetLoggedInUser().GetUserName();
     }
 
     public int CountOfCodecastsPresented()
     {
-        List<PresentableCodecast> presentations = _useCase.PresentCodecasts(_gateKeeper.GetLoggedInUser());
+        List<PresentableCodecast> presentations = _useCase.PresentCodecasts(GateKeeper.GetLoggedInUser());
         return presentations.Count;
     }
     

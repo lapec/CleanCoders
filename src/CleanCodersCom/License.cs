@@ -1,6 +1,6 @@
 namespace CleancodersCom;
 
-public class License
+public class License : Entity
 {
     private User _user;
     private Codecast _codecast;

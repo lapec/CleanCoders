@@ -15,21 +15,23 @@ public class MockGateway : Gateway
         Codecasts.Remove(codecast);
     }
 
-    public void Save(Codecast codecast)
+    public Codecast Save(Codecast codecast)
     {
-        Codecasts.Add(codecast);
+        Codecasts.Add((Codecast)EstablishId(codecast));
+        return codecast;
     }
     
-    public void Save(User user)
+    public User Save(User user)
     {
-        EstablishId(user);
-        Users.Add(user);
+        Users.Add((User)EstablishId(user));
+        return user;
     }
 
-    private void EstablishId(User user)
+    private Entity EstablishId(Entity entity)
     {
-        if (user.GetId() == null)
-            user.SetId(Guid.NewGuid().ToString());
+        if (entity.GetId() == null)
+            entity.SetId(Guid.NewGuid().ToString());
+        return entity;
     }
 
     public void Save(License license)
