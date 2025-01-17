@@ -5,7 +5,6 @@ public class OfCodeCasts
 {
     private List<object> List(params object[] objects)
     {
-        Console.WriteLine("Prc");
         return objects.ToList();
     }
 
@@ -15,28 +14,23 @@ public class OfCodeCasts
         List<Object> queryResponse = List();
         foreach (var pcc in presentableCodecasts)
         {
-            queryResponse.Add
-                (
-                MakeRow(pcc.Title, 
-                    pcc.Title, 
-                    pcc.Title, 
-                    pcc.IsViewable, 
-                    false));
+            queryResponse.Add(MakeRow(pcc));
         }
 
         return queryResponse;
     }
 
-    private List<object> MakeRow(string title, string picture, string description, bool viewable, bool downloadable)
+    private List<object> MakeRow(PresentableCodecast pcc)
     {
         return List(
             new object[]
             {
-                List("title", title),
-                List("picture", picture),
-                List("description", description),
-                List("viewable", viewable ? "+" : "-"),
-                List("downloadable", downloadable ? "+" : "-")
+                List("title", pcc.Title),
+                List("publication date", pcc.PublicationDate),
+                List("picture", pcc.Title),
+                List("description", pcc.Title),
+                List("viewable", pcc.IsViewable ? "+" : "-"),
+                List("downloadable", pcc.IsDownloadable ? "+" : "-")
             }
         );
     }

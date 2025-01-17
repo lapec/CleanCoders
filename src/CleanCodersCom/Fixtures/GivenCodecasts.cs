@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace CleancodersCom.Fixtures;
 
 public class GivenCodecasts
@@ -18,8 +20,9 @@ public class GivenCodecasts
         Codecast codecast = new Codecast
         {
             Title = _title,
-            PublicationDate = _publicationDate
+            PublicationDate = DateTime.ParseExact(_publicationDate, "M/d/yyyy", CultureInfo.InvariantCulture) 
         };
+        Console.WriteLine(_publicationDate);
         Context.Gateway.Save(codecast);
     }
 }

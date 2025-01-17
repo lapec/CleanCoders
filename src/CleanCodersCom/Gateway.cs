@@ -1,7 +1,7 @@
 namespace CleancodersCom;
 public interface Gateway
 {
-    List<Codecast> FindAllCodecasts();
+    List<Codecast> FindAllCodecastsSortedChronologically();
     void Delete(Codecast codecast);
     Codecast Save(Codecast codecast);
     User Save(User user);

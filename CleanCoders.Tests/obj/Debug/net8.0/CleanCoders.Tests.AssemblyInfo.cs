@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CleanCoders.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+875c68dc623b57847cc9cf6b5737d925c13c5db2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba797df5e32a9ef39c05e38175f187663475ce03")]
 [assembly: System.Reflection.AssemblyProductAttribute("CleanCoders.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CleanCoders.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

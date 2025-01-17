@@ -5,9 +5,9 @@ public class MockGateway : Gateway
     private List<User> Users { get; set; } = [];
     private List<License> Licenses { get; set; } = [];
 
-    public List<Codecast> FindAllCodecasts()
+    public List<Codecast> FindAllCodecastsSortedChronologically()
     {
-        return Codecasts;
+        return Codecasts.OrderBy(x=>x.PublicationDate).ToList();
     }
 
     public void Delete(Codecast codecast)

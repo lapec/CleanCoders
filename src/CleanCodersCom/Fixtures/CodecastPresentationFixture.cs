@@ -1,4 +1,6 @@
-﻿namespace CleancodersCom.Fixtures;
+﻿using static CleancodersCom.License.LicenseType;
+
+namespace CleancodersCom.Fixtures;
 
 public class CodecastPresentation
 {
@@ -34,11 +36,19 @@ public class CodecastPresentation
     {
         var user = Context.Gateway.FindUser(username);
         Codecast codecast = Context.Gateway.FindCodecastByTitle(codecastTitle);
-        License license = new License(user, codecast);
+        License license = new License(Viewing, user, codecast);
         Context.Gateway.Save(license);
         return _useCase.IsLicensedToViewCodecast(user, codecast);
     }
-    
+
+    public bool CreateLicenseForDownloading(string username, string codecastTitle)
+    {
+        var user = Context.Gateway.FindUser(username);
+        Codecast codecast = Context.Gateway.FindCodecastByTitle(codecastTitle);
+        License license = new License(Downloading, user, codecast);
+        Context.Gateway.Save(license);
+        return _useCase.IsLicensedToDownloadCodecast(user, codecast);
+    }
     public string PresentationUser()
     {
         return GateKeeper.GetLoggedInUser().GetUserName();
@@ -52,11 +62,11 @@ public class CodecastPresentation
     
     public bool ClearCodecasts()
     {
-        List<Codecast> codecasts = Context.Gateway.FindAllCodecasts();
+        List<Codecast> codecasts = Context.Gateway.FindAllCodecastsSortedChronologically();
         foreach(var codecast in new List<Codecast> (codecasts))
         {
             Context.Gateway.Delete(codecast);
         }
-        return Context.Gateway.FindAllCodecasts().Count() == 0;
+        return Context.Gateway.FindAllCodecastsSortedChronologically().Count() == 0;
     }
 }
