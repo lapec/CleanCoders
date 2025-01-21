@@ -8,7 +8,7 @@ public class PresentCodecastUseCase
     public List<PresentableCodecast> PresentCodecasts(User loggedInUser)
     {
         var presentableCodecasts = new List<PresentableCodecast>();
-        var allCodecasts = Context.Gateway.FindAllCodecastsSortedChronologically();
+        var allCodecasts = Context.CodecastGateway.FindAllCodecastsSortedChronologically();
         
         foreach (var codecast in allCodecasts)
             presentableCodecasts.Add(FormatCodecasts(loggedInUser, codecast));
@@ -36,9 +36,9 @@ public class PresentCodecastUseCase
         return IsLicensedFor(Downloading, user, codecast);
     }
     
-    private bool IsLicensedFor(License.LicenseType licenseType, User user, Codecast codecast)
+    public bool IsLicensedFor(License.LicenseType licenseType, User user, Codecast codecast)
     {
-        List<License> licenses = Context.Gateway.FindLicensesForUserAndCodecast(user, codecast);
+        List<License> licenses = Context.LicenseGateway.FindLicensesForUserAndCodecast(user, codecast);
         foreach(var license in licenses)
             if (license.Type == licenseType)
                 return true;

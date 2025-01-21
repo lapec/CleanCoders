@@ -1,6 +1,6 @@
 namespace CleancodersCom;
 
-public class Entity
+public class Entity : ICloneable
 {
     private string _id;
     public bool IsSame(Entity entity)
@@ -18,5 +18,10 @@ public class Entity
     public string GetId()
     {
         return _id;
+    }
+
+    public object Clone()
+    {
+        return this.MemberwiseClone();
     }
 }

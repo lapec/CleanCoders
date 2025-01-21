@@ -13,9 +13,9 @@ public class PresentCodecastUseCaseTest
     [SetUp]
     public void Setup()
     {
-        Context.Gateway = new MockGateway();
-        User = Context.Gateway.Save(new User("User"));
-        Codecast = Context.Gateway.Save(new Codecast());
+        TestSetup.SetupContext();
+        User = Context.UserGateway.Save(new User("User"));
+        Codecast = Context.CodecastGateway.Save(new Codecast());
         UseCase = new PresentCodecastUseCase();
     }
 
@@ -28,38 +28,41 @@ public class PresentCodecastUseCaseTest
     [Test]
     public void userWithViewLicense_canViewCodecast()
     {
-        License viewLicense = new License(Viewing, User, Codecast);
-        Context.Gateway.Save(viewLicense);
-        Assert.True(UseCase.IsLicensedToViewCodecast(User, Codecast));
+        License viewLicense;
+        viewLicense = new License(Viewing, User, Codecast);
+        Context.LicenseGateway.Save(viewLicense);
+        Assert.True(UseCase.IsLicensedFor(Viewing, User, Codecast));
     }
 
     [Test]
     public void userWithoutViewLicense_cannotViewOtherUsersCodecast()
     {
-        User otherUser = Context.Gateway.Save(new User("otherUser"));
+        User otherUser = Context.UserGateway.Save(new User("otherUser"));
 
         License viewLicense = new License(Viewing, User, Codecast);
-        Context.Gateway.Save(viewLicense);
+        Context.LicenseGateway.Save(viewLicense);
         Assert.False(UseCase.IsLicensedToViewCodecast(otherUser, Codecast));
     }
 
     [Test]
     public void PresentNoCodecast()
     {
-        Context.Gateway.Delete(Codecast);
+        Context.CodecastGateway.Delete(Codecast);
         List<PresentableCodecast> PresentableCodecasts = UseCase.PresentCodecasts(User);
 
         Assert.AreEqual(0, PresentableCodecasts.Count());
     }
     
     [Test]
-    public void PresentOneCodecast()
+    public void OneIsPresented()
     {
         Codecast.Title = "SomeTitle";
         var now = new DateTime(2014,5,19);
         Codecast.PublicationDate = now;
+        Context.CodecastGateway.Save(Codecast);
         
         List<PresentableCodecast> presentableCodecasts = UseCase.PresentCodecasts(User);
+        
         Assert.AreEqual(1, presentableCodecasts.Count);
         var presentableCodecast = presentableCodecasts[0];
         Assert.That(presentableCodecast.Title, Is.EqualTo("SomeTitle"));
@@ -77,7 +80,7 @@ public class PresentCodecastUseCaseTest
     [Test]
     public void PresentedCodeCastsIsViewableIfLicenseExists()
     {
-        Context.Gateway.Save(new License(Viewing, User, Codecast));
+        Context.LicenseGateway.Save(new License(Viewing, User, Codecast));
         List<PresentableCodecast> presentableCodecasts = UseCase.PresentCodecasts(User);
         PresentableCodecast presentableCodecast = presentableCodecasts[0];
         Assert.True(presentableCodecast.IsViewable);
@@ -87,7 +90,7 @@ public class PresentCodecastUseCaseTest
     public void PresentedCodecastIsDownloadableIfDownloadLicenseExists()
     {
         License downloadLicense = new License(Downloading, User, Codecast);
-        Context.Gateway.Save(downloadLicense);
+        Context.LicenseGateway.Save(downloadLicense);
         List<PresentableCodecast> presentableCodecasts = UseCase.PresentCodecasts(User);
         PresentableCodecast presentableCodecast = presentableCodecasts[0];
         Assert.True(presentableCodecast.IsDownloadable);

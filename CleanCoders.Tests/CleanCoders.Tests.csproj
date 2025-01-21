@@ -21,6 +21,15 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>/Users/bobanlapcevic/Desktop/CleanCode/FitNesse</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>/Users/bobanlapcevic/Desktop/CleanCode/FitNesse</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\src\CleanCodersCom\CleanCodersCom.csproj" />
   </ItemGroup>
