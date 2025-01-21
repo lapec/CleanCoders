@@ -1,5 +1,5 @@
-
-*.Tests
+**/bin/
+**/obj/
 *.xml
 *.json
 *.targets
