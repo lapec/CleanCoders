@@ -1,12 +1,64 @@
-## Ignore .dll files
+## Ignore Visual Studio temporary files, build results, and
+## folder-based project outputs
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific folders
+.vscode/
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Build results
+bin/
+obj/
+out/
+
+# Ignore compiled libraries
 *.dll
 
-## Ignore folders
-.idea/
-obj/
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
 
-## Allow only .cs files
-**/*
-!**/*.cs
-!**/*.png
-!**/*.csproj
+# StyleCop
+StyleCopReport.xml
+
+# Files built by popular extensions
+*.ncrunch*
+*.crunch.xml
+~$*
+*.tmproj
+*.csproj.user
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Local History for Visual Studio
+.localhistory
+
+# Windows image file caches
+Thumbs.db
+Thumbs.db:encryptable
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# End of macOS system files
