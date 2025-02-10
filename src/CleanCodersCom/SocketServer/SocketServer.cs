@@ -68,30 +68,26 @@ public class SocketServer
     
     public async Task Stop()
     {
-        // early escape if not running
         if (!Running)
             return;
-        // set server and cancellation token in "toAbort" state
+       
         Running = false;
         _cancellationTokenSource.Cancel();
-        // closing tcp conn, sends signal to OS to realease network resources
+
         try
-        { _serverSocket.Shutdown(SocketShutdown.Both); } catch (SocketException) { }
-        // closing connection and disposing the external resource 
+        {
+            _serverSocket.Shutdown(SocketShutdown.Both);
+        }
+        catch (SocketException ex)
+        {
+            Console.WriteLine($"Socket exception: {ex.Message}");
+        }
+
         _serverSocket.Close();
         _serverSocket.Dispose();
-        // waiting on current job to be finished
+
         if (_executor != null)
             await _executor;
     }
     
-    //later on we can refactor this in self-documenting code like:
-    // public async Task Stop()
-    // {
-    //     EarlyEscapeIfInactive();
-    //     Running = false;
-    //     SetToAbortSignalForServerAndTask();
-    //     CloseTCPConnAndReleaseNetworkResources();
-    // }
-        
 }

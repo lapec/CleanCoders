@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -45,7 +46,7 @@ public class SocketServerTests
         }
     }
     
-    public class WithClosingSocketService : SocketServerTests
+    public class WithClosingSocketService : SocketServerTests, IEnumerable
     {
         private ClosingSocketService _readingService;
         
@@ -115,34 +116,61 @@ public class SocketServerTests
             await server.Stop();
             Assert.That(_readingService.Connections, Is.EqualTo(0));
         }
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
     }
     
     private class EchoSocketService : SocketServerTests.TestSocketService 
     {
         private Socket _ss;
+        public string Message;
+
         protected override void DoService(Socket ss)
         {
-            // ...
+            using NetworkStream ns = new NetworkStream(ss);
+            using StreamReader reader = new StreamReader(ns, Encoding.UTF8);
+            string? message = reader.ReadLine();
+            using StreamWriter writer = new StreamWriter(ns, Encoding.UTF8) { AutoFlush = true };
+            writer.WriteLineAsync(message);
         }
     }
 
-    // public class WithEchoSocketService : SocketServerTests
-    // {
-    //     private EchoSocketService _echoService;
-    //
-    //     [SetUp]
-    //     public void TestSetup()
-    //     {
-    //         _echoService = new EchoSocketService();
-    //         server = new SocketServer(port, _echoService);
-    //     }
-    //
-    //     [Test]
-    //     public void CanEcho()
-    //     {
-    //         server.Start();
-    //     }
-    // }
+    public class WithEchoSocketService : SocketServerTests
+    {
+        private EchoSocketService _echoService;
+        private string? _response;
+    
+        [SetUp]
+        public void TestSetup()
+        {
+            _echoService = new EchoSocketService();
+            server = new SocketServer(port, _echoService);
+        }
+    
+        [Test]
+        public async Task CanEcho()
+        {
+            await server.Start();
+
+            using (Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
+            {
+                await client.ConnectAsync(IPAddress.Loopback, port);
+
+                using NetworkStream ns = new NetworkStream(client);
+                using StreamWriter writer = new StreamWriter(ns, Encoding.UTF8) { AutoFlush = true };
+
+                await writer.WriteLineAsync("echo\n");
+                using StreamReader reader = new StreamReader(ns, Encoding.UTF8);
+                _response = await reader.ReadLineAsync();
+            }
+            
+            Assert.That(_response, Is.EqualTo("echo"));
+            await server.Stop();
+        }
+    }
     
     private class ReadingSocketService : SocketServerTests.TestSocketService 
     {
@@ -184,7 +212,7 @@ public class SocketServerTests
 
                 await writer.WriteLineAsync("Hello from client!");
             }
-            
+            Thread.Sleep(500);
             Assert.That(_readingService.Message, Is.EqualTo("Hello from client!"));
         }
     }

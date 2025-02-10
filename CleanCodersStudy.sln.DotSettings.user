@@ -1,4 +1,14 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=057f4c20_002D9baa_002D4b2a_002D9a0f_002D4b98ebe0712a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AAssert_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003F46a322d26154b982566e1817203e5452c91223f93b0e392d9c5b4806696fdc1_003FAssert_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AIEnumerator_00601_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003Fa0741529c8554d199992ef9e50684668d82800_003F25_003Fd932813d_003FIEnumerator_00601_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=057f4c20_002D9baa_002D4b2a_002D9a0f_002D4b98ebe0712a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;Solution /&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=97f64889_002D975c_002D4b0d_002D9634_002Dee4ba8902463/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="NoReplacement" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.Utilities.View.ViewTemplateTest.NoReplacement&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.Utilities.View.ViewTemplateTest.SimpleReplacement&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleanCoders.Tests.Utilities.HelloWorldViaHTTP.Start&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::070A4100-67FF-4FC6-8821-80E5ECB51984::net8.0::CleancodersCom.Main.MainMethod&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

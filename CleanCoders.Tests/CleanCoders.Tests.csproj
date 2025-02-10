@@ -34,4 +34,8 @@
     <ProjectReference Include="..\src\CleanCodersCom\CleanCodersCom.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="TestData\" />
+  </ItemGroup>
+
 </Project>
